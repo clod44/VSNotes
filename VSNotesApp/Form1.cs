@@ -182,5 +182,11 @@ namespace VSNotes
                 return true;
             }
         }
+
+        private void toolStripButton_settings_Click(object sender, EventArgs e)
+        {
+            SettingsForm settingsForm = new SettingsForm();
+            settingsForm.ShowDialog();
+        }
     }
 }
