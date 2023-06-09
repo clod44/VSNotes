@@ -9,6 +9,7 @@ using System.Xml.Linq;
 using IniParser;
 using IniParser.Model;
 using System.Drawing;
+using System.Security.Policy;
 
 namespace VSNotes
 {
@@ -210,6 +211,7 @@ namespace VSNotes
         private void toolStripButton_settings_Click(object sender, EventArgs e)
         {
             SettingsForm settingsForm = new SettingsForm();
+            settingsForm.SetWorkingDirectory(AppDomain.CurrentDomain.BaseDirectory);
             settingsForm.FormClosed += SettingsForm_FormClosed;
             settingsForm.ShowDialog();
         }
