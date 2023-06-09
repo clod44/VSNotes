@@ -103,7 +103,16 @@ namespace VSNotes
         { 
             try
             {
-                Process.Start(currentConfig.GetConfigFilePath());
+                string configFilePath = currentConfig.GetConfigFilePath();
+                //this info is required to ignore dialog's opening place
+                //so we can still use AppDomain.CurrentDomain.BaseDirectory
+                ProcessStartInfo startInfo = new ProcessStartInfo
+                {
+                    FileName = configFilePath,
+                    WorkingDirectory = Path.GetDirectoryName(configFilePath)
+                };
+
+                Process.Start(startInfo);
             }
             catch (Exception ex)
             {
