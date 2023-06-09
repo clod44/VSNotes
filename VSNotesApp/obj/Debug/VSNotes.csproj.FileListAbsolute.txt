@@ -25,3 +25,6 @@ C:\Users\Rt_Sa\Documents\devstuff\VSNotes\VSNotesApp\obj\Debug\VSNotes.exe.manif
 C:\Users\Rt_Sa\Documents\devstuff\VSNotes\VSNotesApp\obj\Debug\VSNotes.application
 C:\Users\Rt_Sa\Documents\devstuff\VSNotes\VSNotesApp\obj\Debug\VSNotes.exe
 C:\Users\Rt_Sa\Documents\devstuff\VSNotes\VSNotesApp\obj\Debug\VSNotes.pdb
+C:\Users\Rt_Sa\Documents\devstuff\VSNotes\VSNotesApp\bin\Debug\INIFileParser.dll
+C:\Users\Rt_Sa\Documents\devstuff\VSNotes\VSNotesApp\bin\Debug\INIFileParser.xml
+C:\Users\Rt_Sa\Documents\devstuff\VSNotes\VSNotesApp\obj\Debug\VSNotes.csproj.CopyComplete

@@ -21,7 +21,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_4DA38151F5824C828F8BDC4D3B6E2160"
+        "MsmKey" = "8:_70B43202731FDE3A11C2FB861491BD87"
+        "OwnerKey" = "8:_11993C862BA74145AEC2441B95E32408"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7A214C39D6F04E1582AD1CB387D00A9A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -35,6 +41,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_11993C862BA74145AEC2441B95E32408"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_70B43202731FDE3A11C2FB861491BD87"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -68,6 +80,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -92,6 +112,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -122,9 +150,40 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4DA38151F5824C828F8BDC4D3B6E2160"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_70B43202731FDE3A11C2FB861491BD87"
             {
-            "SourcePath" = "8:..\\VSNotes\\vsn_logo.ico"
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:INIFileParser, Version=2.5.2.0, Culture=neutral, PublicKeyToken=79af7b307b65cf3c, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_70B43202731FDE3A11C2FB861491BD87"
+                    {
+                    "Name" = "8:INIFileParser.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:INIFileParser.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_500CBC0055B74BDC8AFD70731BBF7BAD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7A214C39D6F04E1582AD1CB387D00A9A"
+            {
+            "SourcePath" = "8:..\\VSNotesApp\\vsn_logo.ico"
             "TargetName" = "8:vsn_logo.ico"
             "Tag" = "8:"
             "Folder" = "8:_500CBC0055B74BDC8AFD70731BBF7BAD"
@@ -361,7 +420,7 @@
             "Target" = "8:_11993C862BA74145AEC2441B95E32408"
             "Folder" = "8:_4C1F9AAB274B4A1BBB4FF9D6E23BFB73"
             "WorkingFolder" = "8:_500CBC0055B74BDC8AFD70731BBF7BAD"
-            "Icon" = "8:_4DA38151F5824C828F8BDC4D3B6E2160"
+            "Icon" = "8:_7A214C39D6F04E1582AD1CB387D00A9A"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_77528CBE39254B0DA563BB99FC60D6C2"
@@ -375,7 +434,7 @@
             "Target" = "8:_11993C862BA74145AEC2441B95E32408"
             "Folder" = "8:_4272DE1913C949C89157BC934A4B7871"
             "WorkingFolder" = "8:_500CBC0055B74BDC8AFD70731BBF7BAD"
-            "Icon" = "8:_4DA38151F5824C828F8BDC4D3B6E2160"
+            "Icon" = "8:_7A214C39D6F04E1582AD1CB387D00A9A"
             "Feature" = "8:"
             }
         }
@@ -779,7 +838,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_11993C862BA74145AEC2441B95E32408"
             {
-            "SourcePath" = "8:..\\VSNotes\\obj\\Release\\VSNotes.exe"
+            "SourcePath" = "8:..\\VSNotesApp\\obj\\Debug\\VSNotes.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_500CBC0055B74BDC8AFD70731BBF7BAD"

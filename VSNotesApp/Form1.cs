@@ -1,6 +1,14 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
+using System.Security;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
+using System.Xml.Linq;
+using IniParser;
+using IniParser.Model;
+using System.Drawing;
 
 namespace VSNotes
 {
@@ -8,17 +16,29 @@ namespace VSNotes
     {
         string currentFilePath = null;
         bool changesExist = false;
+        ConfigFile currentConfig = new ConfigFile();
         public Form1()
         {
             InitializeComponent();
             changeCurrentFilePath(null);
-        }
 
+            //check if config files exists
+            if (!File.Exists(currentConfig.GetConfigFilePath()))
+            {
+                //create config file
+                currentConfig.ExportConfig();
+            }
+            else
+            {
+                currentConfig.ImportConfig();
+            }
+
+            ApplyConfig();
+        }
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             saveAs();
         }
-
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openFile();
@@ -31,6 +51,16 @@ namespace VSNotes
 
         private void openFile()
         {
+            if (changesExist)
+            {
+                DialogResult result = MessageBox.Show("Do you want to continue? All unsaved content of current file will be lost.", "There are unsaved Changes", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result != DialogResult.Yes)
+                {
+                    return;
+                }
+            }
+
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
             openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
@@ -101,20 +131,14 @@ namespace VSNotes
             if (changesExist)
             {
                 DialogResult result = MessageBox.Show("Do you want to Create a new note without saving this first?. all unsaved changes will be lost.", "There are unsaved Changes", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
+                if (result != DialogResult.Yes)
                 {
-                    richTextBox_notes.Text = "";
-                    setChangesExist(false);
-                    changeCurrentFilePath(null);
+                    return;
                 }
             }
-            else
-            {
-                richTextBox_notes.Text = "";
-                changeCurrentFilePath(null);
-                setChangesExist(false);
-            }
-
+            richTextBox_notes.Text = "";
+            changeCurrentFilePath(null);
+            setChangesExist(false);
         }
 
         private void toolStripButton_about_Click(object sender, EventArgs e)
@@ -186,7 +210,94 @@ namespace VSNotes
         private void toolStripButton_settings_Click(object sender, EventArgs e)
         {
             SettingsForm settingsForm = new SettingsForm();
+            settingsForm.FormClosed += SettingsForm_FormClosed;
             settingsForm.ShowDialog();
+        }
+
+        private void SettingsForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            currentConfig.ImportConfig();
+            ApplyConfig();
+        }
+        private void ApplyConfig()
+        {
+            richTextBox_notes.Font = new Font(richTextBox_notes.Font.FontFamily, Math.Max(1,Math.Min(300, int.Parse(currentConfig.FontSize))), richTextBox_notes.Font.Style);
+            richTextBox_notes.WordWrap = bool.Parse(currentConfig.WordWrap);
+            Color textColor = Color.FromArgb(
+                int.Parse(currentConfig.TextColorR),
+                int.Parse(currentConfig.TextColorG),
+                int.Parse(currentConfig.TextColorB)
+                );
+            richTextBox_notes.ForeColor = textColor;
+            Color backgroundColor = Color.FromArgb(
+                int.Parse(currentConfig.BackgroundColorR),
+                int.Parse(currentConfig.BackgroundColorG),
+                int.Parse(currentConfig.BackgroundColorB)
+                );
+            richTextBox_notes.BackColor = backgroundColor;
         }
     }
 }
+
+
+
+
+
+class ConfigFile
+{
+    public string FontSize { get; set; } = "10";
+    public string TextColorR { get; set; } = "0";
+    public string TextColorG { get; set; } = "0";
+    public string TextColorB { get; set; } = "0";
+    public string BackgroundColorR { get; set; } = "255";
+    public string BackgroundColorG { get; set; } = "255";
+    public string BackgroundColorB { get; set; } = "255";
+    public string WordWrap { get; set; } = "true";
+
+    public void ExportConfig()
+    {
+        var parser = new FileIniDataParser();
+        IniData data = new IniData();
+
+        // Populate the data object with your configuration values
+        data["General"]["FontSize"] = FontSize;
+        data["General"]["WordWrap"] = WordWrap;
+        data["TextColor"]["R"] = TextColorR;
+        data["TextColor"]["G"] = TextColorG;
+        data["TextColor"]["B"] = TextColorB;
+        data["BackgroundColor"]["R"] = BackgroundColorR;
+        data["BackgroundColor"]["G"] = BackgroundColorG;
+        data["BackgroundColor"]["B"] = BackgroundColorB;
+
+        // Write the data to the INI file
+        parser.WriteFile(GetConfigFilePath(), data);
+    }
+
+    public void ImportConfig()
+    {
+        var parser = new FileIniDataParser();
+        IniData data = parser.ReadFile(GetConfigFilePath());
+
+        // Read the values from the INI data and assign them to the properties
+        FontSize = data["General"]["FontSize"];
+        WordWrap = data["General"]["WordWrap"];
+        TextColorR = data["TextColor"]["R"];
+        TextColorG = data["TextColor"]["G"];
+        TextColorB = data["TextColor"]["B"];
+        BackgroundColorR = data["BackgroundColor"]["R"];
+        BackgroundColorG = data["BackgroundColor"]["G"];
+        BackgroundColorB = data["BackgroundColor"]["B"];
+    }
+
+    public string GetConfigFilePath()
+    {
+        string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        return Path.Combine(baseDirectory, "config.ini");
+    }
+}
+
+
+
+
+
+

@@ -32,19 +32,21 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button_textColor = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_fontSize = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button_backgroundColor = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button_openConfig = new System.Windows.Forms.Button();
+            this.button_resetConfig = new System.Windows.Forms.Button();
+            this.button_saveSettings = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.checkBox_wordWrap = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_fontSize)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -56,22 +58,23 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.button_textColor, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.numericUpDown_fontSize, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.button_backgroundColor, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox_wordWrap, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(278, 84);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(278, 104);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // button_textColor
@@ -81,7 +84,6 @@
             this.button_textColor.Name = "button_textColor";
             this.button_textColor.Size = new System.Drawing.Size(133, 23);
             this.button_textColor.TabIndex = 1;
-            this.button_textColor.Text = "button4";
             this.button_textColor.UseVisualStyleBackColor = true;
             this.button_textColor.Click += new System.EventHandler(this.button_textColor_Click);
             // 
@@ -96,15 +98,15 @@
             this.label1.Text = "Font Size:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // numericUpDown1
+            // numericUpDown_fontSize
             // 
-            this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.numericUpDown_fontSize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDown1.Location = new System.Drawing.Point(142, 3);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(133, 20);
-            this.numericUpDown1.TabIndex = 3;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDown_fontSize.Location = new System.Drawing.Point(142, 3);
+            this.numericUpDown_fontSize.Name = "numericUpDown_fontSize";
+            this.numericUpDown_fontSize.Size = new System.Drawing.Size(133, 20);
+            this.numericUpDown_fontSize.TabIndex = 3;
+            this.numericUpDown_fontSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -135,39 +137,41 @@
             this.button_backgroundColor.Name = "button_backgroundColor";
             this.button_backgroundColor.Size = new System.Drawing.Size(133, 23);
             this.button_backgroundColor.TabIndex = 7;
-            this.button_backgroundColor.Text = "button5";
             this.button_backgroundColor.UseVisualStyleBackColor = true;
             this.button_backgroundColor.Click += new System.EventHandler(this.button_backgroundColor_Click);
             // 
-            // button1
+            // button_openConfig
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Open config folder";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_openConfig.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_openConfig.Location = new System.Drawing.Point(3, 3);
+            this.button_openConfig.Name = "button_openConfig";
+            this.button_openConfig.Size = new System.Drawing.Size(86, 23);
+            this.button_openConfig.TabIndex = 0;
+            this.button_openConfig.Text = "Open config folder";
+            this.button_openConfig.UseVisualStyleBackColor = true;
+            this.button_openConfig.Click += new System.EventHandler(this.button_openConfig_Click);
             // 
-            // button2
+            // button_resetConfig
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(95, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Reset Config";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_resetConfig.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_resetConfig.Location = new System.Drawing.Point(95, 3);
+            this.button_resetConfig.Name = "button_resetConfig";
+            this.button_resetConfig.Size = new System.Drawing.Size(86, 23);
+            this.button_resetConfig.TabIndex = 1;
+            this.button_resetConfig.Text = "Reset Config";
+            this.button_resetConfig.UseVisualStyleBackColor = true;
+            this.button_resetConfig.Click += new System.EventHandler(this.button_resetConfig_Click);
             // 
-            // button3
+            // button_saveSettings
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.Location = new System.Drawing.Point(187, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(88, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Save Settings";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button_saveSettings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_saveSettings.Location = new System.Drawing.Point(187, 3);
+            this.button_saveSettings.Name = "button_saveSettings";
+            this.button_saveSettings.Size = new System.Drawing.Size(88, 23);
+            this.button_saveSettings.TabIndex = 1;
+            this.button_saveSettings.Text = "Save Settings";
+            this.button_saveSettings.UseVisualStyleBackColor = true;
+            this.button_saveSettings.Click += new System.EventHandler(this.button_saveSettings_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -191,9 +195,9 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.Controls.Add(this.button1, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button2, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button3, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.button_openConfig, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.button_resetConfig, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.button_saveSettings, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 129);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -212,6 +216,28 @@
             this.panel1.Size = new System.Drawing.Size(278, 120);
             this.panel1.TabIndex = 1;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Location = new System.Drawing.Point(3, 84);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(133, 20);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Word Wrap:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // checkBox_wordWrap
+            // 
+            this.checkBox_wordWrap.AutoSize = true;
+            this.checkBox_wordWrap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBox_wordWrap.Location = new System.Drawing.Point(142, 87);
+            this.checkBox_wordWrap.Name = "checkBox_wordWrap";
+            this.checkBox_wordWrap.Size = new System.Drawing.Size(133, 14);
+            this.checkBox_wordWrap.TabIndex = 9;
+            this.checkBox_wordWrap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBox_wordWrap.UseVisualStyleBackColor = true;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,7 +252,7 @@
             this.Text = "Settings";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_fontSize)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -239,12 +265,12 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button_openConfig;
+        private System.Windows.Forms.Button button_resetConfig;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDown_fontSize;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button_saveSettings;
         private System.Windows.Forms.Button button_textColor;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button_backgroundColor;
@@ -252,5 +278,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox checkBox_wordWrap;
     }
 }
