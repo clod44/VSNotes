@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace VSNotes
@@ -108,7 +101,8 @@ namespace VSNotes
             if (changesExist)
             {
                 DialogResult result = MessageBox.Show("Do you want to Create a new note without saving this first?. all unsaved changes will be lost.", "There are unsaved Changes", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes) { 
+                if (result == DialogResult.Yes)
+                {
                     richTextBox_notes.Text = "";
                     setChangesExist(false);
                     changeCurrentFilePath(null);
@@ -130,14 +124,14 @@ namespace VSNotes
 
         private void changeCurrentFilePath(string newFilePath)
         {
-            
-            this.Text = "VSNotes - " + (newFilePath == null ? "New Note" : newFilePath);    
+
+            this.Text = "VSNotes - " + (newFilePath == null ? "New Note" : newFilePath);
             currentFilePath = newFilePath;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(tryToExit()) Application.Exit();
+            if (tryToExit()) Application.Exit();
         }
 
         private void richTextBox_notes_TextChanged(object sender, EventArgs e)
@@ -174,7 +168,7 @@ namespace VSNotes
             if (changesExist)
             {
                 DialogResult result = MessageBox.Show("Do you want to exit without saving?", "There are unsaved Changes", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes) 
+                if (result == DialogResult.Yes)
                 {
                     return true;
                 }
