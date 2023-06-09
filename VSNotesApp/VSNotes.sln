@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSNotes", "VSNotes.csproj", "{4CE21858-BD73-4DD4-B96F-2D867FAC5107}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "VSNotesSetup", "..\VSNotesSetup\VSNotesSetup.vdproj", "{DAD6D184-FDAB-4460-8C97-1E969BF72DC4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4CE21858-BD73-4DD4-B96F-2D867FAC5107}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CE21858-BD73-4DD4-B96F-2D867FAC5107}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CE21858-BD73-4DD4-B96F-2D867FAC5107}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CE21858-BD73-4DD4-B96F-2D867FAC5107}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAD6D184-FDAB-4460-8C97-1E969BF72DC4}.Debug|Any CPU.ActiveCfg = Debug
+		{DAD6D184-FDAB-4460-8C97-1E969BF72DC4}.Release|Any CPU.ActiveCfg = Release
+		{DAD6D184-FDAB-4460-8C97-1E969BF72DC4}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85FF338A-21CC-41A4-8A28-1965BEB5A110}
+	EndGlobalSection
+EndGlobal

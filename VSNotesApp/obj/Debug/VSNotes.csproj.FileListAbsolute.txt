@@ -1,0 +1,11 @@
+C:\Users\Rt_Sa\Documents\devstuff\VSNotes\bin\Debug\VSNotes.exe.config
+C:\Users\Rt_Sa\Documents\devstuff\VSNotes\bin\Debug\VSNotes.exe
+C:\Users\Rt_Sa\Documents\devstuff\VSNotes\bin\Debug\VSNotes.pdb
+C:\Users\Rt_Sa\Documents\devstuff\VSNotes\obj\Debug\VSNotes.csproj.AssemblyReference.cache
+C:\Users\Rt_Sa\Documents\devstuff\VSNotes\obj\Debug\VSNotes.csproj.SuggestedBindingRedirects.cache
+C:\Users\Rt_Sa\Documents\devstuff\VSNotes\obj\Debug\VSNotes.Form1.resources
+C:\Users\Rt_Sa\Documents\devstuff\VSNotes\obj\Debug\VSNotes.Properties.Resources.resources
+C:\Users\Rt_Sa\Documents\devstuff\VSNotes\obj\Debug\VSNotes.csproj.GenerateResource.cache
+C:\Users\Rt_Sa\Documents\devstuff\VSNotes\obj\Debug\VSNotes.csproj.CoreCompileInputs.cache
+C:\Users\Rt_Sa\Documents\devstuff\VSNotes\obj\Debug\VSNotes.exe
+C:\Users\Rt_Sa\Documents\devstuff\VSNotes\obj\Debug\VSNotes.pdb
