@@ -16,7 +16,6 @@ namespace VSNotes
     {
         ConfigFile currentConfig = new ConfigFile();
 
-        private string workingDirectory;
         public SettingsForm()
         {
             InitializeComponent();
@@ -33,10 +32,6 @@ namespace VSNotes
             }
 
             ImportSettingsVisuals();
-        }
-        public void SetWorkingDirectory(string directoryPath)
-        {
-            workingDirectory = directoryPath;
         }
         private void ImportSettingsVisuals()
         {
@@ -114,7 +109,7 @@ namespace VSNotes
                 ProcessStartInfo startInfo = new ProcessStartInfo
                 {
                     FileName = configFilePath,
-                    WorkingDirectory = this.workingDirectory
+                    WorkingDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
                 };
 
                 Process.Start(startInfo);

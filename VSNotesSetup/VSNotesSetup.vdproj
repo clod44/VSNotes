@@ -289,7 +289,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:VSNotesSetup"
         "ProductCode" = "8:{07C6D79C-46DE-42D8-ACEF-27DB102E6BA8}"
-        "PackageCode" = "8:{EE370ADF-D077-4377-B17B-8DA21ECB1BEF}"
+        "PackageCode" = "8:{29CF4824-4BD0-4E82-8344-4D77069C3751}"
         "UpgradeCode" = "8:{DC5DF7D7-BFAD-4464-8280-9A342A55694F}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -297,7 +297,7 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:clod44"
+        "Manufacturer" = "8:VSNotes"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:VSNotesSetup"
@@ -838,7 +838,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_11993C862BA74145AEC2441B95E32408"
             {
-            "SourcePath" = "8:..\\VSNotesApp\\obj\\Debug\\VSNotes.exe"
+            "SourcePath" = "8:..\\VSNotesApp\\obj\\Release\\VSNotes.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_500CBC0055B74BDC8AFD70731BBF7BAD"

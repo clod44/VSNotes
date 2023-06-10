@@ -211,7 +211,6 @@ namespace VSNotes
         private void toolStripButton_settings_Click(object sender, EventArgs e)
         {
             SettingsForm settingsForm = new SettingsForm();
-            settingsForm.SetWorkingDirectory(AppDomain.CurrentDomain.BaseDirectory);
             settingsForm.FormClosed += SettingsForm_FormClosed;
             settingsForm.ShowDialog();
         }
@@ -293,8 +292,16 @@ class ConfigFile
 
     public string GetConfigFilePath()
     {
-        string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-        return Path.Combine(baseDirectory, "config.ini");
+        string baseDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        string appDirectory = Path.Combine(baseDirectory, "VSNotes");
+
+        // Create the directory if it doesn't exist
+        if (!Directory.Exists(appDirectory))
+        {
+            Directory.CreateDirectory(appDirectory);
+        }
+
+        return Path.Combine(appDirectory, "config.ini");
     }
 }
 
